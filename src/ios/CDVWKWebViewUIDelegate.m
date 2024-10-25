@@ -120,4 +120,12 @@
     [rootController presentViewController:alert animated:YES completion:nil];
 }
 
+- (void) webView:(WKWebView*)webView 
+    requestMediaCapturePermissionForOrigin:(nonnull WKSecurityOrigin *)origin 
+    initiatedByFrame:(nonnull WKFrameInfo *)frame 
+    type:(WKMediaCaptureType)type decisionHandler:(nonnull void (^)(WKPermissionDecision))decisionHandler
+    API_AVAILABLE(ios(15.0))
+{
+    decisionHandler(WKPermissionDecisionGrant);
+}
 @end
